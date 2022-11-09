@@ -1,0 +1,30 @@
+name: Datree CLI
+description: Use the Datree CLI in a github action
+author: hadarco
+inputs:
+  path:
+    description: the file/s to be tested
+    required: true
+  cliArguments:
+    description: the Datree CLI options to be used
+    required: false
+  isHelmChart:
+    description: is the desired path a Helm chart?
+    required: true
+    default: 'false'
+  helmArguments:
+    description: the Helm arguments to be used
+    required: false
+  isKustomization:
+    description: is the desired path a Kustomization?
+    required: true
+    default: 'false'
+  kustomizeArguments:
+    description: the Kustomize arguments to be used
+    required: false
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: 'terminal'
+  color: 'black'
